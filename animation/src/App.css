@@ -185,6 +185,11 @@
   }
 }
 
+@keyframes orbitRing {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
 .ticks {
   position: relative;
   width: 100%;

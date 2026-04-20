@@ -18,6 +18,9 @@ const PATH_D3 = "M52.166 0.226782C59.8039 -0.274962 82.9453 -0.348707 88.2227 4.
 function App() {
   const animRef = useRef(null);
   const animRef3 = useRef(null);
+  const dot2aRef = useRef(null);
+  const dot2bRef = useRef(null);
+  const dot2cRef = useRef(null);
 
   useEffect(() => {
     animRef.current = gsap.to('#dot', {
@@ -44,9 +47,33 @@ function App() {
       },
     });
 
+    dot2aRef.current = gsap.to('#dot2a', {
+      duration: 4,
+      repeat: -1,
+      ease: 'none',
+      motionPath: { path: '#trisCircle1', align: '#trisCircle1', alignOrigin: [0.5, 0.5] },
+    });
+
+    dot2bRef.current = gsap.to('#dot2b', {
+      duration: 3.7,
+      repeat: -1,
+      ease: 'none',
+      motionPath: { path: '#trisCircle2', align: '#trisCircle2', alignOrigin: [0.5, 0.5] },
+    });
+
+    dot2cRef.current = gsap.to('#dot2c', {
+      duration: 4.3,
+      repeat: -1,
+      ease: 'none',
+      motionPath: { path: '#trisCircle3', align: '#trisCircle3', alignOrigin: [0.5, 0.5] },
+    });
+
     return () => {
       animRef.current?.kill();
       animRef3.current?.kill();
+      dot2aRef.current?.kill();
+      dot2bRef.current?.kill();
+      dot2cRef.current?.kill();
     };
   }, []);
  
@@ -79,7 +106,41 @@ function App() {
             </g>
           </svg>
         </SwiperSlide>
-        <SwiperSlide className="mp-slide">Slide 2</SwiperSlide>
+        <SwiperSlide className="mp-slide">
+          <svg
+            className="mp-svg"
+            viewBox="0 0 1189 725"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* Trisquel : 3 cercles chevauchants, centres à 120° autour du centre */}
+            {/* Cercles comme <path> pour compatibilité GSAP MotionPathPlugin */}
+            <path id="trisCircle1" d="M 394,242 a 200,200 0 1,0 400,0 a 200,200 0 1,0 -400,0" stroke="#ffffff" strokeWidth="3" fill="none" />
+            <path id="trisCircle2" d="M 498,422 a 200,200 0 1,0 400,0 a 200,200 0 1,0 -400,0" stroke="#ffffff" strokeWidth="3" fill="none" />
+            <path id="trisCircle3" d="M 290,422 a 200,200 0 1,0 400,0 a 200,200 0 1,0 -400,0" stroke="#ffffff" strokeWidth="3" fill="none" />
+            <g id="dot2a">
+              <circle r="12" fill="#ff0000" />
+              <circle r="28" stroke="#ff0000" strokeWidth="2" fill="none" />
+              <g style={{ transformOrigin: '0px 0px', animation: 'orbitRing 1.2s linear infinite' }}>
+                <circle r="6" cx="28" cy="0" fill="#ff0000" />
+              </g>
+            </g>
+            <g id="dot2b">
+              <circle r="12" fill="#ff0000" />
+              <circle r="28" stroke="#ff0000" strokeWidth="2" fill="none" />
+              <g style={{ transformOrigin: '0px 0px', animation: 'orbitRing 1.6s linear infinite' }}>
+                <circle r="6" cx="28" cy="0" fill="#ff0000" />
+              </g>
+            </g>
+            <g id="dot2c">
+              <circle r="12" fill="#ff0000" />
+              <circle r="28" stroke="#ff0000" strokeWidth="2" fill="none" />
+              <g style={{ transformOrigin: '0px 0px', animation: 'orbitRing 1.4s linear infinite' }}>
+                <circle r="6" cx="28" cy="0" fill="#ff0000" />
+              </g>
+            </g>
+          </svg>
+        </SwiperSlide>
         <SwiperSlide className="mp-slide">Slide 3</SwiperSlide>
       </Swiper>
     </div>
