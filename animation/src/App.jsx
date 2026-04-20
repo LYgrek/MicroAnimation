@@ -1,6 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import './App.css';
  
 gsap.registerPlugin(MotionPathPlugin);
@@ -47,25 +52,37 @@ function App() {
  
   return (
     <div className="mp-root">
-      <svg
-        className="mp-svg"
-        viewBox="0 0 1189 725"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+      <Swiper
+        modules={[Navigation, Pagination]}
+        navigation
+        pagination={{ clickable: true }}
+        spaceBetween={30}
+        slidesPerView={1}
+        className="mp-swiper"
       >
-        <path id="monPath" d={PATH_D} stroke="black" strokeWidth="73" fill="none" />
-        <path d={PATH_D} stroke="#FFFF00" strokeWidth="5" fill="none" />
-        <g id="dot">
-          <path d={PATH_D2} fill="#FF0000" transform="scale(0.15) translate(-194, -68)" />
-          <rect x="-0.1" y="-50.3" width="0.2" height="0.2" fill="transparent" />
-        </g>
-        <g id="dot3">
-          <path d={PATH_D3} fill="#0077ff" transform="scale(0.15) translate(-194, -68)" />
-          <rect x="-0.1" y="50.1" width="0.2" height="0.2" fill="transparent" />
-        </g>
-      </svg>
+        <SwiperSlide className="mp-slide">
+          <svg
+            className="mp-svg"
+            viewBox="0 0 1189 725"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path id="monPath" d={PATH_D} stroke="black" strokeWidth="73" fill="none" />
+            <path d={PATH_D} stroke="#FFFF00" strokeWidth="5" fill="none" />
+            <g id="dot">
+              <path d={PATH_D2} fill="#FF0000" transform="scale(0.15) translate(-194, -68)" />
+              <rect x="-0.1" y="-50.3" width="0.2" height="0.2" fill="transparent" />
+            </g>
+            <g id="dot3">
+              <path d={PATH_D3} fill="#0077ff" transform="scale(0.15) translate(-194, -68)" />
+              <rect x="-0.1" y="50.1" width="0.2" height="0.2" fill="transparent" />
+            </g>
+          </svg>
+        </SwiperSlide>
+        <SwiperSlide className="mp-slide">Slide 2</SwiperSlide>
+        <SwiperSlide className="mp-slide">Slide 3</SwiperSlide>
+      </Swiper>
     </div>
-    
   );
 }
  
