@@ -185,6 +185,24 @@
   }
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  color: #FF0000;
+}
+
+.swiper-pagination-bullet-active {
+  background: #FF0000;
+}
+
+.swiper-pagination-bullet {
+  background: #FF0000;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
 @keyframes orbitRing {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }

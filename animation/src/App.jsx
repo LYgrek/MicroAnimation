@@ -95,13 +95,13 @@ function App() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path id="monPath" d={PATH_D} stroke="black" strokeWidth="73" fill="none" />
-            <path d={PATH_D} stroke="#FFFF00" strokeWidth="5" fill="none" />
+            <path d={PATH_D} stroke="#ffffff" strokeWidth="5" fill="none" />
             <g id="dot">
               <path d={PATH_D2} fill="#FF0000" transform="scale(0.15) translate(-194, -68)" />
               <rect x="-0.1" y="-50.3" width="0.2" height="0.2" fill="transparent" />
             </g>
             <g id="dot3">
-              <path d={PATH_D3} fill="#0077ff" transform="scale(0.15) translate(-194, -68)" />
+              <path d={PATH_D3} fill="#ff0000" transform="scale(0.15) translate(-194, -68)" />
               <rect x="-0.1" y="50.1" width="0.2" height="0.2" fill="transparent" />
             </g>
           </svg>
@@ -120,21 +120,21 @@ function App() {
             <path id="trisCircle3" d="M 290,422 a 200,200 0 1,0 400,0 a 200,200 0 1,0 -400,0" stroke="#ffffff" strokeWidth="3" fill="none" />
             <g id="dot2a">
               <circle r="12" fill="#ff0000" />
-              <circle r="28" stroke="#ff0000" strokeWidth="2" fill="none" />
+              <circle r="28" stroke="#ffffff" strokeWidth="2" fill="none" />
               <g style={{ transformOrigin: '0px 0px', animation: 'orbitRing 1.2s linear infinite' }}>
                 <circle r="6" cx="28" cy="0" fill="#ff0000" />
               </g>
             </g>
             <g id="dot2b">
               <circle r="12" fill="#ff0000" />
-              <circle r="28" stroke="#ff0000" strokeWidth="2" fill="none" />
+              <circle r="28" stroke="#ffffff" strokeWidth="2" fill="none" />
               <g style={{ transformOrigin: '0px 0px', animation: 'orbitRing 1.6s linear infinite' }}>
                 <circle r="6" cx="28" cy="0" fill="#ff0000" />
               </g>
             </g>
             <g id="dot2c">
               <circle r="12" fill="#ff0000" />
-              <circle r="28" stroke="#ff0000" strokeWidth="2" fill="none" />
+              <circle r="28" stroke="#ffffff" strokeWidth="2" fill="none" />
               <g style={{ transformOrigin: '0px 0px', animation: 'orbitRing 1.4s linear infinite' }}>
                 <circle r="6" cx="28" cy="0" fill="#ff0000" />
               </g>
